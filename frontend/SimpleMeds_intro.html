@@ -1,7 +1,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewprt" content="width-device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Medical Information</title>
         <link rel="stylesheet" href="style.css"
     </head>
@@ -14,8 +14,17 @@
                     <p>Ensuring people get assistance in undestanding their medical prescriptions</p>
                 </div>
                 <div class="prescriptions">
-                    <input type="file" id="file">
-                    <button onclick="upload()">Upload</button>
+                    <label>Upload prescription image:</label><br>
+                    <input type="file" id="image" accept="image/*"><br><br>
+
+                    <strong>OR</strong><br><br>
+
+                    <label>Type prescription:</label><br>
+                    <textarea id="text" rows="4" cols="40"
+                        placeholder="e.g. Ibuprofen 500mg twice daily"></textarea><br><br>
+
+                    <button onclick="nextPage()">Next</button>
+
 
                     <script src="intro_script.js"></script>
                 </div>
