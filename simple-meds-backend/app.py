@@ -3,7 +3,7 @@ import os
 import tempfile
 import json
 from datetime import datetime, timedelta
-from flask import Flask, request, jsonify, session, redirect
+from flask import Flask, request, jsonify, session, redirect, send_from_directory
 from dotenv import load_dotenv
 load_dotenv()
 import pytz
@@ -14,7 +14,7 @@ from calendar_utils import start_oauth_flow, fetch_credentials_from_authorizatio
 from google.oauth2.credentials import Credentials
 
 
-app = Flask(__name__, static_folder=None)
+app = Flask(__name__, static_folder="../static", static_url_path="")
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "change_me")
 BASE_URL = os.environ.get("BASE_URL", "http://localhost:5000")
 DEFAULT_TZ = os.environ.get("TZ", "Europe/London")
@@ -29,10 +29,14 @@ DEFAULT_TZ = os.environ.get("TZ", "Europe/London")
 
 @app.route("/")
 def index():
-    """
-    Minimal health/info endpoint. Frontend will serve UI separately.
-    """
-    return jsonify({"app": "Simple Meds backend", "description": "Medication explanation + calendar reminders (demo)"})
+    return send_from_directory(app.static_folder, "SimpleMeds_intro.html")
+
+@app.route("/api")
+def api_info():
+    return jsonify({
+        "app": "Simple Meds backend",
+        "description": "Medication explanation + calendar reminders (demo)"
+    })
 
 
 @app.route("/api/explain", methods=["POST"])
