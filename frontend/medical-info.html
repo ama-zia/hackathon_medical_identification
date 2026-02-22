@@ -5,23 +5,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Medical Information</title>
         <link rel="stylesheet" href="style.css">
+        <script src="medical-info.js"></script>
     </head>
 
     <body>
         <h2>Explain My Medication</h2>
         <div class="card-container">
-            <div class="card">
-                <h3>What it's for</h3>
+            <div class="card" id="use">
+                <h4>What it's for</h4>
             </div>
-            <div class="card">
-                <h3>Side effects</h3>
+            <div class="card" id="side-effects">
+                <h4>Side effects</h4>
             </div>
-            <div class="card">
-                <h3>When to seek help</h3>
+            <div class="card" id="seek-help">
+                <h4>When to seek help</h4>
             </div>
-            <div class="card">
-                <h3>Dosages</h3>
+            <div class="card" id="dosages">
+                <h4>Dosages</h4>
             </div>
         </div>
+        <button id="reminder">Set a reminder</button>
     </body>
 </html>

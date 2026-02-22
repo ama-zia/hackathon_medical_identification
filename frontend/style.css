@@ -8,16 +8,22 @@ h2 {
     text-align: center;
 }
 
+h4 {
+    border-bottom: 2px solid black;
+}
+
 .card-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 150px);
-    gap: 10px;
+    grid-template-columns: repeat(2, 40vw);
+    grid-template-rows: repeat(2, 60vw);
+    gap: 10vw;
     text-align: center;
+    justify-content: center;
 }
 
 .card {
-    width: 100px;
-    height: 100px;
+    width: 40vw;
+    height: 60vw;
     outline: 2px solid black;
+    border-radius: 10px;
 }
