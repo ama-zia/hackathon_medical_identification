@@ -1,0 +1,3 @@
+# Ignore sensitive files
+client_secret.json
+.env
